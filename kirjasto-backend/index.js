@@ -117,7 +117,7 @@ const resolvers = {
     authorCount: () => authors.length,
     allBooks: (root, args) => {
       if (!args.author) {
-        books
+        return books
       }
       const byAuthor = (book) =>
         args.author === book.author ? book : !book
