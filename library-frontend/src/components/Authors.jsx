@@ -48,13 +48,13 @@ const Authors = (props) => {
       </table>
       <h2>Set birthyear</h2>
       <form onSubmit={submit}>
-      <div>
+        <div>
           name <input value={name} onChange={({ target }) => setName(target.value)} />
         </div>
         <div>
           born <input value={born} onChange={({ target }) => setBorn(target.value)} />
         </div>
-        <button type='submit'>update author</button>
+      <button type='submit'>update author</button>
       </form>
     </div>
   )
