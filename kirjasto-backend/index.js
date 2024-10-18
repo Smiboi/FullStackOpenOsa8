@@ -213,7 +213,7 @@ const resolvers = {
   Mutation: {
     addBook: async (root, args, context) => {
       const author = await Author.findOne({ name: args.author })
-      const book = await new Book({ author: author._id, title: args.title, published: args.published, genres: args.genres })
+      const book = await new Book({ author: author, title: args.title, published: args.published, genres: args.genres })
       const currentUser = context.currentUser
 
       if (!currentUser) {
