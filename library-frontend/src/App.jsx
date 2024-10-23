@@ -15,17 +15,7 @@ const App = () => {
     localStorage.clear()
     client.resetStore()
   }
-/* 
-  if (!token) {
-    return (
-      <div>
-        <Login
-          setToken={setToken}
-        />
-      </div>
-    )
-  }
- */
+
   if (!token) {
     return (
       <div>
