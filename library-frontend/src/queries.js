@@ -28,6 +28,7 @@ export const ALL_BOOKS = gql`
         name
       }
       id
+      genres
     }
   }
 `
@@ -74,5 +75,13 @@ export const EDIT_AUTHOR = gql`
 export const ALL_GENRES = gql`
   query {
     allGenres
+  }
+`
+
+export const ME = gql`
+  query {
+    me {
+      favoriteGenre
+    }
   }
 `

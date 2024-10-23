@@ -21,7 +21,7 @@ const Books = (props) => {
   // }
 
   if (allBooksInGenre.loading || genres.loading) {
-    return <div>loading...</div>;
+    return <div>loading...</div>
   }
 
   // if (!books.data) {
