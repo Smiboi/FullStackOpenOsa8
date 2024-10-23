@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client'
-import { ALL_BOOKS, ALL_GENRES, ALL_BOOKS_IN_GENRE } from '../queries'
+import { ALL_GENRES, ALL_BOOKS_IN_GENRE } from '../queries'
 import { useState } from 'react'
 
 const Books = (props) => {
@@ -10,7 +10,9 @@ const Books = (props) => {
 
   const genreFilterText = chosenGenre === null ? '' : 'in genre ' + chosenGenre
   const variables = chosenGenre === null ? {} : {genre: chosenGenre}
-  const allBooksInGenre = useQuery(ALL_BOOKS_IN_GENRE, { variables: variables })
+  const allBooksInGenre = useQuery(ALL_BOOKS_IN_GENRE, { variables: variables }, {
+    refetchQueries: [ { query: ALL_GENRES } ]
+  })
 
   if (!props.show) {
     return null
